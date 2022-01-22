@@ -16,7 +16,8 @@ $gitBashIcoFileName = "git-bash.ico"
 $ubuntuIcoFileName = "ubuntu.ico"
 $unknownIcoFileName = "unknown.ico"
 $menuRegID = "WindowsTerminal"
-$contextMenuLabel = "Open Windows Terminal here"
+# Chinese: "在此处打开 Windows Terminal"
+$contextMenuLabel = "$([char]0x5728)$([char]0x6b64)$([char]0x5904)$([char]0x6253)$([char]0x5f00) Windows Terminal"
 $contextMenuRegPath = "Registry::HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\shell\$menuRegID"
 $contextBGMenuRegPath = "Registry::HKEY_CURRENT_USER\SOFTWARE\Classes\Directory\Background\shell\$menuRegID"
 $subMenuRegRelativePath = "Directory\ContextMenus\$menuRegID"
@@ -142,7 +143,8 @@ $profiles | ForEach-Object {
         else {
             $label_f = $profileName
         }
-        $labelAdmin_f = "$label_f (Admin)"
+        # Chinese: "$label_f (管理员)"
+        $labelAdmin_f = "$label_f ($([char]0x7ba1)$([char]0x7406)$([char]0x5458))"
 
         $command_f = "`"$env:LOCALAPPDATA\Microsoft\WindowsApps\wt.exe`" -p `"$profileName`" -d `"%V\.`""
         $commandAdmin_f = "powershell -WindowStyle hidden -Command `"Start-Process powershell -WindowStyle hidden -Verb RunAs -ArgumentList `"`"`"`"-Command $env:LOCALAPPDATA\Microsoft\WindowsApps\wt.exe -p '$profileName' -d '%V\.'`"`"`"`""

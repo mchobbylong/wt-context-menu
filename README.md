@@ -1,11 +1,13 @@
-# 🧾 Windows-terminal-context-menu 
+# 🧾 Windows-terminal-context-menu
+
+**[Simplified Chinese]** Language of text in the context menu in this fork is Simplied Chinese. 此分支中菜单的文字为简体中文。
 
 ![](https://raw.githubusercontent.com/kerol2r20/Windows-terminal-context-menu/master/Preview.png)
 
 Inspired from Windows terminal issue [Add "open Windows terminal here" into right-click context menu #1060](https://github.com/microsoft/terminal/issues/1060). Thanks to you all giants ❤
 
-Windows terminal is an excellent terminal. But it does not offer a basic function which is **right click context menu**!  
-Without it, I have to `cd` to my working directory everytime. It's inefficient.  
+Windows terminal is an excellent terminal. But it does not offer a basic function which is **right click context menu**!
+Without it, I have to `cd` to my working directory everytime. It's inefficient.
 
 So I wrote this script to deal with it.
 
@@ -25,13 +27,13 @@ So I wrote this script to deal with it.
 3. Change the execution policy `Set-ExecutionPolicy Unrestricted -scope CurrentUser`
 4. Run `SetupContextMenu.ps1` script
 
-⚠️ If you find no item in your context menu, it may be caused by the old style profiles.json. You can delete `%LocalAppData%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json` and restart Windows terminal. The new one will be generated. Ref to [microsoft/terminal#4556](https://github.com/microsoft/terminal/pull/4556) 
+⚠️ If you find no item in your context menu, it may be caused by the old style profiles.json. You can delete `%LocalAppData%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json` and restart Windows terminal. The new one will be generated. Ref to [microsoft/terminal#4556](https://github.com/microsoft/terminal/pull/4556)
 
 # Uninstall
 1. Run `SetupContextMenu.ps1 -uninstall:$true`
 
 # Config
-This script will parse the `settings.json` file to generate menu items. However you can customize it.  
+This script will parse the `settings.json` file to generate menu items. However you can customize it.
 Put any icon file into `icon` folder and modify the `config.json` like the following.
 
 ```json
