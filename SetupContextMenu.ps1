@@ -13,6 +13,7 @@ $psIcoFileName = "powershell.ico"
 $psCoreIcoFileName = "powershell-core.ico"
 $azureCoreIcoFileName = "azure.ico"
 $gitBashIcoFileName = "git-bash.ico"
+$ubuntuIcoFileName = "ubuntu.ico"
 $unknownIcoFileName = "unknown.ico"
 $menuRegID = "WindowsTerminal"
 $contextMenuLabel = "Open Windows Terminal here"
@@ -168,6 +169,9 @@ $profiles | ForEach-Object {
         }
         elseif ($source -eq "Windows.Terminal.Azure") {
             $icoPath = "$azureCoreIcoFileName"
+        }
+        elseif ($profileName -match "ubuntu") {
+            $icoPath = "$ubuntuIcoFileName"
         }
         elseif ($source -eq "Git") {
             $icoPath = "$gitBashIcoFileName"
