@@ -12,6 +12,7 @@ $wslIcoFileName = "linux.ico"
 $psIcoFileName = "powershell.ico"
 $psCoreIcoFileName = "powershell-core.ico"
 $azureCoreIcoFileName = "azure.ico"
+$gitBashIcoFileName = "git-bash.ico"
 $unknownIcoFileName = "unknown.ico"
 $menuRegID = "WindowsTerminal"
 $contextMenuLabel = "Open Windows Terminal here"
@@ -95,7 +96,7 @@ $profiles = $null;
 if($json.profiles.list){
     Write-Host "Working with the new profiles style"
     $profiles = $json.profiles.list;
-} else{
+} else {
     Write-Host "Working with the old profiles style"
     $profiles = $json.profiles;
 }
@@ -167,7 +168,10 @@ $profiles | ForEach-Object {
         }
         elseif ($source -eq "Windows.Terminal.Azure") {
             $icoPath = "$azureCoreIcoFileName"
-        }else{
+        }
+        elseif ($source -eq "Git") {
+            $icoPath = "$gitBashIcoFileName"
+        } else {
             # Unhandled Icon
             $icoPath = "$unknownIcoFileName"
             Write-Host "No icon found, using unknown.ico instead"
