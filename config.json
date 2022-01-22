@@ -1,8 +1,13 @@
 {
     "global": {
-        "extended": false
+        "extended": true
     },
     "profiles": {
-        
+        "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}": {
+            "showRunAs": true
+        },
+        "{574e775e-4f2a-5b96-ac1e-a2962a402336}": {
+            "showRunAs": true
+        }
     }
 }
